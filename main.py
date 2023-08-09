@@ -14,5 +14,9 @@ for index, topic in topics.iterrows():
     pdf.cell(w=0, h=12, txt=topic["Topic"], ln=1)
     pdf.line(10, 21, 200, 21)
 
+    # add multiple pages
+    for page in range(topic["Pages"] - 1):
+        pdf.add_page()
+
 pdf.output("output.pdf")
 
